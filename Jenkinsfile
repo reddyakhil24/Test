@@ -33,10 +33,5 @@ pipeline {
         sh 'echo $(date)'
       }
     }
-    stage('PowerShell') {
-      steps {
-        powershell(script: 'node {     powershell \'Write-Output "Hello, World!"\' }', returnStatus: true, returnStdout: true)
-      }
-    }
   }
 }
