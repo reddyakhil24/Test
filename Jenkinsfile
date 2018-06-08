@@ -33,7 +33,7 @@ pipeline {
         powershell 'node {     powershell \'Write-Output "Hello, World!"\' }'
       }
      
-        }
+        
       }
     }
   }
