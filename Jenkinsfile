@@ -16,11 +16,25 @@ pipeline {
       }
     }
     stage('Display Time') {
-      steps {
-        timestamps() {
-          echo 'The Time is 4:35 PM'
-        }
+      parallel {
+        stage('Display Time') {
+          steps {
+            timestamps() {
+              echo 'The Time is 4:35 PM'
+            }
 
+          }
+        }
+        stage('EST') {
+          steps {
+            sh 'TZ=":US/Eastern" date +%Y%m%d'
+          }
+        }
+        stage('US Central') {
+          steps {
+            sh 'TZ=":US/Central" date +%Y%m%d'
+          }
+        }
       }
     }
     stage('Pull') {
