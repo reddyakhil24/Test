@@ -30,7 +30,7 @@ pipeline {
     }
     stage('Test PS') {
       steps {
-        powershell 'Get-Date -DisplayHint Date'
+        powershell 'node {     powershell \'Write-Output "Hello, World!"\' }'
       }
     }
   }
