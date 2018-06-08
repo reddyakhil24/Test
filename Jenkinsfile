@@ -37,7 +37,7 @@ pipeline {
       steps {
         sh '''#!/bin/bash
 
-echo "hello, today is $(date)" > /tmp/jenkins_test'''
+echo "hello, today is $(date)"'''
       }
     }
   }
