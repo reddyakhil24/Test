@@ -28,5 +28,10 @@ pipeline {
         git(url: 'https://github.com/reddyakhil24/Test', credentialsId: 'reddyakhil24')
       }
     }
+    stage('Copy Files in Azure Vm') {
+      steps {
+        powershell 'Test'
+      }
+    }
   }
 }
