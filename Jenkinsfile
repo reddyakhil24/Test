@@ -32,6 +32,14 @@ pipeline {
       steps {
         powershell 'node {     powershell \'Write-Output "Hello, World!"\' }'
       }
+      Stage('Test 1') {
+        Steps {
+        node {
+    def msg = powershell(returnStdout: true, script: 'Write-Output "PowerShell is mighty!"')
+    println msg
+}
+        }
+      }
     }
   }
 }
