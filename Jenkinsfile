@@ -30,7 +30,7 @@ pipeline {
     }
     stage('Copy Files in Azure Vm') {
       steps {
-        powershell 'Test'
+        powershell 'Write-Host "Hello, World!"'
       }
     }
   }
